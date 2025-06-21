@@ -13,10 +13,12 @@ export interface CreateUserResponse {
   message: string;
 }
 
-export const useCreateUserMutation = (options?: ReactMutationOptions) => {
+export const useCreateUserMutation = (
+  options?: ReactMutationOptions<CreateUserResponse, unknown, MutationInput>
+) => {
   return useMutation({
     mutationKey: ["create_user"],
-    mutationFn: async (input: MutationInput) => {
+    mutationFn: async (input) => {
       const response = await api.post<CreateUserResponse>("user", input);
       return response.data;
     },
