@@ -1,11 +1,15 @@
 import { BrowserRouter, Route, Routes } from "react-router";
-import { DashboardPage } from "../pages";
+
+import { HomePage } from "@/pages";
+import { PublicLayout } from "@/layouts";
 
 export const AppRoutes = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<DashboardPage />} />
+        <Route element={<PublicLayout />}>
+          <Route path="/" element={<HomePage />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
