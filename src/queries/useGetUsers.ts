@@ -32,7 +32,7 @@ export const getUsers = () => {
   };
 };
 
-export const useGetUsers = (options: ReactQueryOptions<UsersData[]>) => {
+export const useGetUsers = (options?: ReactQueryOptions<UsersData[]>) => {
   const { queryKey, queryFn } = getUsers();
 
   const query = useQuery({ queryKey, queryFn, ...options });
