@@ -19,7 +19,7 @@ interface UsersData {
   };
 }
 
-export const getUsers = () => {
+export const getUsersQuery = () => {
   const queryKey = ["users_list"];
   const queryFn = async () => {
     const response = await api.get<UsersData[]>("/users");
@@ -32,8 +32,8 @@ export const getUsers = () => {
   };
 };
 
-export const useGetUsers = (options?: ReactQueryOptions<UsersData[]>) => {
-  const { queryKey, queryFn } = getUsers();
+export const useGetUsersQuery = (options?: ReactQueryOptions<UsersData[]>) => {
+  const { queryKey, queryFn } = getUsersQuery();
 
   const query = useQuery({ queryKey, queryFn, ...options });
 

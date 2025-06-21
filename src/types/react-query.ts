@@ -12,6 +12,6 @@ export type ReactQueryOptions<
 export type ReactMutationOptions<
   TData = unknown,
   TError = unknown,
-  TVariables = void,
+  TVariables = unknown,
   TContext = unknown
 > = Omit<UseMutationOptions<TData, TError, TVariables, TContext>, "mutationFn">;
